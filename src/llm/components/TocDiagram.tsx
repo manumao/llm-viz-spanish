@@ -560,7 +560,7 @@ export const TocDiagram: React.FC<{
     let titleAbove = false;
 
     return <div>
-        {titleAbove && <div className={s.tocTitle}>Table of Contents</div>}
+        {titleAbove && <div className={s.tocTitle}>Tabla de Contenidos</div>}
         <div className={s.tocDiagram}>
             <svg viewBox={`0 0 310 ${height}`} width={'310px'} height={height} ref={setDiagramEl}>
                 {exampleInfo?.node}
@@ -571,7 +571,7 @@ export const TocDiagram: React.FC<{
                 {renderTocToDigramLines()}
             </svg>
             <div className={s.toc}>
-                {!titleAbove && <div className={s.tocTitle}>Table of Contents</div>}
+                {!titleAbove && <div className={s.tocTitle}>Tabla de Contenidos</div>}
                 {entryGroups.map((group, i) => {
 
                     return <React.Fragment key={i}>
