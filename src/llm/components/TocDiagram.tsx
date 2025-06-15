@@ -129,10 +129,10 @@ export const TocDiagram: React.FC<{
     }
 
     entryGroups.push({ groupName: 'Intro', entries: [] });
-    makeEntry(Phase.Intro_Intro, 'Introduction', []);
-    makeEntry(Phase.Intro_Prelim, 'Preliminaries', []);
+    makeEntry(Phase.Intro_Intro, 'Introducción', []);
+    makeEntry(Phase.Intro_Prelim, 'Preliminares', []);
 
-    entryGroups.push({ groupName: 'Components', entries: [] });
+    entryGroups.push({ groupName: 'Componentes', entries: [] });
     makeEntry(Phase.Input_Detail_Embedding, 'Embedding', ['tokEmbed', 'posEmbed'], true);
     makeEntry(Phase.Input_Detail_LayerNorm, 'Layer Norm', ['ln1', 'ln2', 'lnf']);
     makeEntry(Phase.Input_Detail_SelfAttention, 'Self Attention', ['selfAttend']);
@@ -350,7 +350,7 @@ export const TocDiagram: React.FC<{
         let ctx = canvas.getContext('2d')!;
         ctx.font = '16px Merriweather';
 
-        let textSegs = ['How', ' to', ' predict'];
+        let textSegs = ['Como', ' es', ' predecir'];
         let ids = [2437, 284, 4331];
 
         let colors = [
@@ -369,7 +369,7 @@ export const TocDiagram: React.FC<{
             offsets.push(offsets[offsets.length - 1] + widths[widths.length - 1]);
         }
 
-        let egTextSegs = [' text', ' tokens', ' words'];
+        let egTextSegs = [' texto', ' tokens', ' palabras'];
         let egPct = [0.8, 0.5, 0.3];
         let egIds = [2420, 16326, 2456];
         let egWidths = egTextSegs.map(seg => ctx.measureText(seg).width + 1);
@@ -560,7 +560,7 @@ export const TocDiagram: React.FC<{
     let titleAbove = false;
 
     return <div>
-        {titleAbove && <div className={s.tocTitle}>Table of Contents</div>}
+        {titleAbove && <div className={s.tocTitle}>Tabla de Contenidos</div>}
         <div className={s.tocDiagram}>
             <svg viewBox={`0 0 310 ${height}`} width={'310px'} height={height} ref={setDiagramEl}>
                 {exampleInfo?.node}
@@ -571,7 +571,7 @@ export const TocDiagram: React.FC<{
                 {renderTocToDigramLines()}
             </svg>
             <div className={s.toc}>
-                {!titleAbove && <div className={s.tocTitle}>Table of Contents</div>}
+                {!titleAbove && <div className={s.tocTitle}>Tabla de Contenidos</div>}
                 {entryGroups.map((group, i) => {
 
                     return <React.Fragment key={i}>
